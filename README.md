@@ -44,6 +44,7 @@ For inquiries about commercial licenses, please contact [Felix Chopra](f.chopra@
 * [Option 2: Deploy as Flask app](#option-2-deploy-as-flask-app)
 * [Option 3: Deploy as AWS Lambda function (preferred)](#option-3-deploy-on-aws)
 * [Qualtrics integration](#integrating-with-qualtrics)
+* [Limesurvey integration](#limesurvey-integration)
 * [How to interact with the app](#how-to-interact-with-the-app)
 * [Retrieving stored interviews](#retrieving)
 
@@ -180,6 +181,16 @@ Once you have deployed your app, you can integrate it (using the public endpoint
 **Step 1:** In Qualtrics, add embedded variables `user_id`, `interview_id`, `interview_endpoint` and `first_question` to the begining of your survey flow. `user_id` should uniquely identify your respondent. `interview_id` should identify the parameter settings of your AI interviewer (see `app/parameters.py` for details, e.g. `STOCK_MARKET`). `interview_endpoint` is the URL of the public endpoint of your hosted application.
 
 **Step 2:** Create a `Text/Graphic` question in your survey. The folders `Qualtrics` contain HTML and JavaScript files depending on whether you would like to allow respondents to provide audio input or only written input. Copy the content into the HTML and JavaScript field of the `Text/Graphic` question.
+
+**Step 3:** Done!
+
+## Limesurvey integration
+
+Once you have deployed your app, you can integrate it into a Limesurvey questionnaire.
+
+**Step 1:** In Limesurvey, create survey variables `user_id`, `interview_id`, `interview_endpoint`, and `first_question`. These can be stored in hidden questions or set using the Expression Manager. `user_id` should uniquely identify your respondent. `interview_id` selects the interviewer parameters (see `app/parameters.py`, e.g. `STOCK_MARKET`). `interview_endpoint` is the URL of the public endpoint of your hosted application.
+
+**Step 2:** Add a "Text display" question. The folders `Limesurvey` contain HTML and JavaScript files depending on whether you would like to allow respondents to provide audio input or only written input. Copy the content into the question's HTML and JavaScript fields.
 
 **Step 3:** Done!
 

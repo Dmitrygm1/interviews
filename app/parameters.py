@@ -121,6 +121,22 @@ import os
 # directly, e.g. by changing it to `OPENAI_API_KEY = "MY_OPENAI_API_KEY"`
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "ADD_YOUR_OPENAI_API_KEY_HERE_AS_A_STRING_VARIABLE") 
 
+# Add this test function to verify the key
+def test_api_key():
+    if OPENAI_API_KEY == "ADD_YOUR_OPENAI_API_KEY_HERE_AS_A_STRING_VARIABLE":
+        print("❌ API key not set - using default placeholder")
+        return False
+    elif OPENAI_API_KEY.startswith("sk-"):
+        print("✅ API key appears to be properly formatted")
+        return True
+    else:
+        print("⚠️ API key is set but may not be valid format")
+        return False
+
+if __name__ == "__main__":
+    test_api_key()
+
+
 
 INTERVIEW_PARAMETERS = {
 	"STOCK_MARKET": {

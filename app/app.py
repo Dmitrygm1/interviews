@@ -8,15 +8,47 @@ from flask import (
 	make_response
 )
 from core import decorators, logic
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=False)
 app.error_handler_spec[None] = decorators.wrap_flask_errors()
 app.add_url_rule('/healthcheck', 'healthcheck', lambda: ('', 200))
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST', 'OPTIONS'])
+@decorators.handle_500
 def index():
-	"""For verifying that the app is running. Not needed in practice."""
-	return 'Running!'
+	"""For verifying that the app is running or routing Qualtrics API requests."""
+	if request.method == 'GET':
+		return 'Running!'
+	if request.method == 'OPTIONS':
+		response = make_response('', 204)
+		response.headers['Access-Control-Allow-Origin'] = '*'
+		response.headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
+		response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+		return response
+	body = request.get_json(force=True, silent=True) or {}
+	route = body.get('route')
+	payload = body.get('payload', {}) or {}
+	if route == 'next':
+		required = [key for key in ('session_id', 'interview_id') if key not in payload]
+		if required:
+			raise ValueError(f"Missing required fields for 'next': {', '.join(required)}")
+		response = logic.next_question(
+			payload['session_id'],
+			payload['interview_id'],
+			payload.get('user_message')
+		)
+	elif route == 'transcribe':
+		if 'audio' not in payload:
+			raise ValueError("Missing audio payload for transcription.")
+		response = logic.transcribe(payload['audio'])
+	elif route == 'retrieve':
+		sessions = payload.get('sessions')
+		response = logic.retrieve_sessions(sessions)
+	else:
+		raise ValueError("Invalid request. Please try again.")
+	return jsonify(response)
 
 @app.route('/<interview_id>/<session_id>', methods=['GET'])
 @decorators.handle_500
@@ -183,4 +215,4 @@ def retrieve():
 
 if __name__ == "__main__":
 	# Only for debugging while developing!
-	app.run(host="127.0.0.1", port=8000, debug=True)
+	app.run(host="0.0.0.0", port=8000, debug=True)

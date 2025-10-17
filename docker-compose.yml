@@ -1,7 +1,7 @@
+name: interviews 
 services:
   app:
     image: interviews:latest
-    container_name: app
     ports: 
       - ${PORT:-8000}:80
     build:

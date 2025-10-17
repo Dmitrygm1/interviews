@@ -7,6 +7,7 @@ services:
     build:
       context: .
     environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
       - LOG_LEVEL=${LOG_LEVEL:-ERROR}   # Defaults to minimum logging at ERROR level
       - DATA_DIR=/app/data              # Save to subdirectory named 'data'
     volumes:

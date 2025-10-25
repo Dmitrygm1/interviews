@@ -30,3 +30,8 @@ wheels/
 *.csv
 data/
 .aws-sam/
+
+# Environment variables
+.env 
+.env.local
+.env.*.local

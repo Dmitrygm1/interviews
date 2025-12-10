@@ -294,7 +294,7 @@ INTERVIEW_PARAMETERS = {
 		"moderate_questions": True,
 		"summarize": True,
 		"max_flags_allowed": 5,
-		"first_question": "What do your day-to-day work tasks usually look like?",
+		"first_question": "Can you describe the main types of tasks you do in your job?",
 		"interview_plan": [
 			{
 				 "topic": "Prompt 1: Actual usage / non-usage and perceived usefulness. Explore how and to what extent the interviewee currently uses (or chooses not to use) GenAI in their day-to-day work. Ask about frequency of use, which concrete tasks or projects GenAI is involved in, and how it has changed their workflow, performance, productivity, effectiveness, or creativity. Invite specific examples of both successful and unsuccessful use cases, as well as situations where they deliberately avoid GenAI. Bring out where the interviewee sees GenAI as particularly useful, not useful, or even harmful for their work.",
@@ -392,7 +392,8 @@ INTERVIEW_PARAMETERS = {
 				2. Natural transition: Use relevant context from the Current Conversation or Previous Conversation Summary to bridge into the new topic.
 				3. Personal tie-in: Reuse the interviewee's own words or phrases when possible so the shift feels connected to what they just said.
 				4. Simplicity: Use casual, simple language and short sentences.
-				5. Clarity: Make sure the question clearly signals the shift to the new topic.
+				5. Single ask: Keep the transition question about one idea; don't bundle multiple asks together.
+				6. Clarity: Make sure the question clearly signals the shift to the new topic.
 
 				YOUR RESPONSE: Provide only the next transition question.
 			""",
@@ -423,7 +424,8 @@ INTERVIEW_PARAMETERS = {
 				4. Relevance: Prioritize themes central to the topic (usage patterns, ease, emotions, social effects, technical perceptions, human-likeness views, or adoption barriers/intentions) without drifting into unrelated areas.
 				5. Focus: Avoid recaps unless a brief reference is needed for clarity; keep each question focused on one aspect.
 				6. Build on answers: Anchor your question in the interviewee's own words from the whole conversation (summary and current_topic_history). Pull through specific phrases they used so it feels personal and responsive.
-				7. Simplicity: Use casual, simple language and short sentences. Avoid repetitive setups like always asking about challenges and rewards; vary how you open.
+				7. One ask: Keep each question about a single idea; avoid double-barreled questions that ask two things at once.
+				8. Simplicity: Use casual, simple language and short sentences. Avoid repetitive setups like always asking about challenges and rewards; vary how you open.
 
 				PROBING GUIDELINES:
 				1. Depth: Follow up on themes that reveal motivations, perceptions, emotions, and concrete experiences with GenAI.

@@ -390,7 +390,9 @@ INTERVIEW_PARAMETERS = {
 				GUIDELINES:
 				1. Open-endedness: Ask a clear open-ended question that invites detail (avoid yes/no).
 				2. Natural transition: Use relevant context from the Current Conversation or Previous Conversation Summary to bridge into the new topic.
-				3. Clarity: Make sure the question clearly signals the shift to the new topic.
+				3. Personal tie-in: Reuse the interviewee's own words or phrases when possible so the shift feels connected to what they just said.
+				4. Simplicity: Use casual, simple language and short sentences.
+				5. Clarity: Make sure the question clearly signals the shift to the new topic.
 
 				YOUR RESPONSE: Provide only the next transition question.
 			""",

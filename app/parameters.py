@@ -294,7 +294,7 @@ INTERVIEW_PARAMETERS = {
 		"moderate_questions": True,
 		"summarize": True,
 		"max_flags_allowed": 5,
-		"first_question": "To start us off, how are you currently using or choosing not to use generative AI in your day-to-day work?",
+		"first_question": "What do your day-to-day work tasks usually look like?",
 		"interview_plan": [
 			{
 				 "topic": "Prompt 1: Actual usage / non-usage and perceived usefulness. Explore how and to what extent the interviewee currently uses (or chooses not to use) GenAI in their day-to-day work. Ask about frequency of use, which concrete tasks or projects GenAI is involved in, and how it has changed their workflow, performance, productivity, effectiveness, or creativity. Invite specific examples of both successful and unsuccessful use cases, as well as situations where they deliberately avoid GenAI. Bring out where the interviewee sees GenAI as particularly useful, not useful, or even harmful for their work.",
@@ -420,6 +420,8 @@ INTERVIEW_PARAMETERS = {
 				3. Respect: Approach sensitive feelings or concerns with care; move on if discomfort is signaled.
 				4. Relevance: Prioritize themes central to the topic (usage patterns, ease, emotions, social effects, technical perceptions, human-likeness views, or adoption barriers/intentions) without drifting into unrelated areas.
 				5. Focus: Avoid recaps unless a brief reference is needed for clarity; keep each question focused on one aspect.
+				6. Build on answers: Anchor your question in the interviewee's own words from the whole conversation (summary and current_topic_history). Pull through specific phrases they used so it feels personal and responsive.
+				7. Simplicity: Use casual, simple language and short sentences. Avoid repetitive setups like always asking about challenges and rewards; vary how you open.
 
 				PROBING GUIDELINES:
 				1. Depth: Follow up on themes that reveal motivations, perceptions, emotions, and concrete experiences with GenAI.

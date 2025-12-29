@@ -29,7 +29,7 @@ wheels/
 ## Application 
 *.csv
 data/
-data-VM/
+#data-VM/
 .aws-sam/
 
 # Environment variables

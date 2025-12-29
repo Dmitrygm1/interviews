@@ -81,7 +81,7 @@ Each of the above dictionaries should specify the following set of parameters:
 	- prompt (str): the prompt that describes the task and desired behavior of the agent (feel free to modify according to your needs)
 	- max_tokens (int): the maximum number of completion tokens the agent can generate in its response (default: 1000)
 	- temperature (float): the temperature parameter for the LLM (default: 0.9)
-	- model (str): the model to use for the agent (default: gpt-4o)
+	- model (str): the model to use for the agent (default: gpt-5.2)
 
 3. DETAILS ABOUT THE PROMPTS:
 The prompts for the AI agent include placeholder variables that are programmatically replaced based on the current state of the interview.
@@ -208,7 +208,7 @@ INTERVIEW_PARAMETERS = {
 				YOUR RESPONSE: Your summary should be a succinct yet comprehensive account of the full interview, allowing other interviewers to continue the conversation.
 			""",
 			"max_tokens": 1000,
-			"model": "gpt-4o"
+			"model": "gpt-5.2"
 		},
 		"transition": { # for the transition agent
 			"prompt": """
@@ -234,7 +234,7 @@ INTERVIEW_PARAMETERS = {
 				YOUR RESPONSE: Please provide the most suitable next transition question in the interview, without any other discussion, context, or remarks.
 			""",
 			"temperature": 0.7,
-			"model": "gpt-4o",
+			"model": "gpt-5.2",
 			"max_tokens": 300
 		},
 		"probe": {  # for the probing agent
@@ -268,7 +268,7 @@ INTERVIEW_PARAMETERS = {
 				YOUR RESPONSE: Please provide the most suitable next probing question in the interview, without any other discussion, context, or remarks.
 			""",
 			"temperature": 0.7,
-			"model": "gpt-4o",
+			"model": "gpt-5.2",
 			"max_tokens": 300
 		},
 		"moderator": {  # for the moderator agent
@@ -283,7 +283,7 @@ INTERVIEW_PARAMETERS = {
 
 				TASK: Does the interviewee's response fit into the context of an interview? Importantly, please answer only with a single 'yes' or 'no'. 
 			""",
-			"model": "gpt-4o-mini",
+			"model": "gpt-5.2",
 			"max_tokens": 2
 		}
 	},
@@ -369,7 +369,7 @@ INTERVIEW_PARAMETERS = {
 				YOUR RESPONSE: Provide a succinct, comprehensive summary of the interview so far.
 			""",
 			"max_tokens": 1000,
-			"model": "gpt-4o"
+			"model": "gpt-5.2"
 		},
 		"transition": {
 			"prompt": """
@@ -398,7 +398,7 @@ INTERVIEW_PARAMETERS = {
 				YOUR RESPONSE: Provide only the next transition question.
 			""",
 			"temperature": 0.7,
-			"model": "gpt-4o",
+			"model": "gpt-5.2",
 			"max_tokens": 300
 		},
 		"probe": {
@@ -418,13 +418,13 @@ INTERVIEW_PARAMETERS = {
 				TASK: Formulate the next probing question aligned with the Current Interview Topic to deepen understanding of the interviewee's experiences and views on GenAI.
 
 				GENERAL GUIDELINES:
-				1. Open-endedness: Use open-ended questions ("how", "what", "why") that encourage detailed, reflective answers.
-				2. Neutrality: Avoid leading language and avoid offering advice or technical instructions.
-				3. Respect: Approach sensitive feelings or concerns with care; move on if discomfort is signaled.
-				4. Relevance: Prioritize themes central to the topic (usage patterns, ease, emotions, social effects, technical perceptions, human-likeness views, or adoption barriers/intentions) without drifting into unrelated areas.
-				5. Focus: Avoid recaps unless a brief reference is needed for clarity; keep each question focused on one aspect.
-				6. Build on answers: Anchor your question in the interviewee's own words from the whole conversation (summary and current_topic_history). Pull through specific phrases they used so it feels personal and responsive.
-				7. One ask: You must keep each question about a single idea; do NOT do double-barreled questions that ask two things at once.
+    			1. One ask: You must keep each question about a single idea; do NOT do double-barreled questions that ask two things at once.
+				2. Open-endedness: Use open-ended questions ("how", "what", "why") that encourage detailed, reflective answers.
+				3. Neutrality: Avoid leading language and avoid offering advice or technical instructions.
+				4. Respect: Approach sensitive feelings or concerns with care; move on if discomfort is signaled.
+				5. Relevance: Prioritize themes central to the topic (usage patterns, ease, emotions, social effects, technical perceptions, human-likeness views, or adoption barriers/intentions) without drifting into unrelated areas.
+				6. Focus: Avoid recaps unless a brief reference is needed for clarity; keep each question focused on one aspect.
+				7. Build on answers: Anchor your question in the interviewee's own words from the whole conversation (summary and current_topic_history). Pull through specific phrases they used so it feels personal and responsive.
 				8. Simplicity: Use casual, simple language and short sentences. Avoid repetitive setups like always asking about challenges and rewards; vary how you open.
 
 				PROBING GUIDELINES:
@@ -435,7 +435,7 @@ INTERVIEW_PARAMETERS = {
 				YOUR RESPONSE: Provide only the next probing question.
 			""",
 			"temperature": 0.7,
-			"model": "gpt-4o",
+			"model": "gpt-5.2",
 			"max_tokens": 300
 		},
 		"moderator": {
@@ -450,7 +450,7 @@ INTERVIEW_PARAMETERS = {
 
 				TASK: Does the interviewee's response fit into the context of an interview? Importantly, please answer only with a single 'yes' or 'no'. 
 			""",
-			"model": "gpt-4o-mini",
+			"model": "gpt-5.2",
 			"max_tokens": 2
 		}
 	},
@@ -491,23 +491,23 @@ INTERVIEW_PARAMETERS = {
 		"summary": {
 			"prompt": """your_prompt_here""",
 			"max_tokens": 1000,
-			"model": "gpt-4o"
+			"model": "gpt-5.2"
 		},
 		"transition": {
 			"prompt": """your_prompt_here""",
 			"temperature": 0.7,
-			"model": "gpt-4o",
+			"model": "gpt-5.2",
 			"max_tokens": 300
 		},
 		"probe": {
 			"prompt": """your_prompt_here""",
 			"temperature": 0.7,
-			"model": "gpt-4o",
+			"model": "gpt-5.2",
 			"max_tokens": 300
 		},
 		"moderator": {
 			"prompt": """your_prompt_here""",
-			"model": "gpt-4o",
+			"model": "gpt-5.2",
 			"max_tokens": 2
 		}
 	},

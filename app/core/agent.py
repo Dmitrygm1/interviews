@@ -34,7 +34,7 @@ class LLMAgent(object):
     def construct_query(self, tasks:list, history:list, user_message:str=None) -> dict:
         """ 
         Construct OpenAI API completions query, 
-        defaults to `gpt-4o-mini` model, 300 token answer limit, and temperature of 0. 
+        defaults to `gpt-5.2` model, 300 token answer limit, and temperature of 0. 
         For details see https://platform.openai.com/docs/api-reference/completions.
         """
         return {
@@ -48,7 +48,7 @@ class LLMAgent(object):
                         user_message=user_message
                     )
                 }],
-                "model": self.parameters[task].get('model', 'gpt-4o-mini'),
+                "model": self.parameters[task].get('model', 'gpt-5.2'),
                 "max_tokens": self.parameters[task].get('max_tokens', 300),
                 "temperature": self.parameters[task].get('temperature', 0)
             } for task in tasks

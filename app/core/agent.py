@@ -49,7 +49,11 @@ class LLMAgent(object):
                     )
                 }],
                 "model": self.parameters[task].get('model', 'gpt-5.2'),
-                "max_tokens": self.parameters[task].get('max_tokens', 300),
+                # Some models reject `max_tokens`; `max_completion_tokens` is the supported replacement.
+                "max_completion_tokens": self.parameters[task].get(
+                    "max_completion_tokens",
+                    self.parameters[task].get("max_tokens", 300),
+                ),
                 "temperature": self.parameters[task].get('temperature', 0)
             } for task in tasks
         }

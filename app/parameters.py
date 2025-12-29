@@ -284,7 +284,7 @@ INTERVIEW_PARAMETERS = {
 				TASK: Does the interviewee's response fit into the context of an interview? Importantly, please answer only with a single 'yes' or 'no'. 
 			""",
 			"model": "gpt-5.2",
-			"max_tokens": 2
+			"max_tokens": 64
 		}
 	},
 	"GENAI_WORKPLACE": {
@@ -451,7 +451,7 @@ INTERVIEW_PARAMETERS = {
 				TASK: Does the interviewee's response fit into the context of an interview? Importantly, please answer only with a single 'yes' or 'no'. 
 			""",
 			"model": "gpt-5.2",
-			"max_tokens": 2
+			"max_tokens": 64
 		}
 	},
 	# TEMPLATE FOR ADDITIONAL INTERVIEW CONFIGURATIONS:
@@ -508,7 +508,7 @@ INTERVIEW_PARAMETERS = {
 		"moderator": {
 			"prompt": """your_prompt_here""",
 			"model": "gpt-5.2",
-			"max_tokens": 2
+			"max_tokens": 64
 		}
 	},
 }

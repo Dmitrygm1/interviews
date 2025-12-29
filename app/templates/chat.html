@@ -213,6 +213,20 @@ submitButton.addEventListener("click", function () {
             contentType: "application/json",
             dataType: "json",
             success: function (data) {
+                if (!data || typeof data.message !== "string") {
+                    console.error("Unexpected response shape:", data);
+                    var err =
+                        (data && typeof data.message === "string" && data.message) ||
+                        (data && typeof data.str === "string" && data.str) ||
+                        "There was a technical error. Please try again.";
+                    appendChatbotMessage(err, chatArea, "response");
+                    submitButton.disabled = false;
+                    submitButton.style.backgroundColor = '#007BFF';
+                    submitButton.innerText = "Submit response";
+                    recordButton.disabled = false;
+                    return;
+                }
+
                 var next_question = data.message.trim();
 
                 // Check if this is the last message of the interview
@@ -237,8 +251,12 @@ submitButton.addEventListener("click", function () {
             },
             // REQUEST UNSUCCESSFUL
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error("Error:", errorThrown);
-                appendChatbotMessage("There was a technical error. Please try again.", chatArea, "response");
+                console.error("Error:", textStatus, errorThrown, jqXHR);
+                var serverMsg =
+                    (jqXHR && jqXHR.responseJSON && typeof jqXHR.responseJSON.message === "string" && jqXHR.responseJSON.message) ||
+                    (jqXHR && jqXHR.responseJSON && typeof jqXHR.responseJSON.str === "string" && jqXHR.responseJSON.str) ||
+                    "There was a technical error. Please try again.";
+                appendChatbotMessage(serverMsg, chatArea, "response");
                 submitButton.disabled = false;
                 submitButton.style.backgroundColor = '#007BFF';
                 submitButton.innerText = "Submit response";

@@ -45,9 +45,16 @@ def handle_500(f):
 		try:
 			response = f(*args, **kwargs)
 		except Exception as e:
-			http_code = getattr(e, "http_code", None) or getattr(e, "code", 500)
+			http_code = (
+				getattr(e, "http_code", None)
+				or getattr(e, "status_code", None)
+				or getattr(e, "code", None)
+				or 500
+			)
+			if not isinstance(http_code, int):
+				http_code = 500
 			message = str(e) or getattr(e, "message", "Service failed")
-			meta = {"type":type(e).__name__,"tb":tb.format_exc(),"str":message}
+			meta = {"type":type(e).__name__,"tb":tb.format_exc(),"str":message,"message":message}
 			# Log application errors
 			logging.error(jsonable({
 				"payload":request.get_json(force=True, silent=True) or {},

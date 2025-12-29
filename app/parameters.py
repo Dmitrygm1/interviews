@@ -424,7 +424,7 @@ INTERVIEW_PARAMETERS = {
 				4. Relevance: Prioritize themes central to the topic (usage patterns, ease, emotions, social effects, technical perceptions, human-likeness views, or adoption barriers/intentions) without drifting into unrelated areas.
 				5. Focus: Avoid recaps unless a brief reference is needed for clarity; keep each question focused on one aspect.
 				6. Build on answers: Anchor your question in the interviewee's own words from the whole conversation (summary and current_topic_history). Pull through specific phrases they used so it feels personal and responsive.
-				7. One ask: Keep each question about a single idea; avoid double-barreled questions that ask two things at once.
+				7. One ask: You must keep each question about a single idea; do NOT do double-barreled questions that ask two things at once.
 				8. Simplicity: Use casual, simple language and short sentences. Avoid repetitive setups like always asking about challenges and rewards; vary how you open.
 
 				PROBING GUIDELINES:

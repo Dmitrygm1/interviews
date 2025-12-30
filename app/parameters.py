@@ -390,10 +390,9 @@ INTERVIEW_PARAMETERS = {
 				GUIDELINES:
 				1. Open-endedness: Ask a clear open-ended question that invites detail (avoid yes/no).
 				2. Natural transition: Use relevant context from the Current Conversation or Previous Conversation Summary to bridge into the new topic.
-				3. Personal tie-in: Reuse the interviewee's own words or phrases when possible so the shift feels connected to what they just said.
-				4. Simplicity: Use casual, simple language and short sentences.
-				5. Single ask: Keep the transition question about one idea; don't bundle multiple asks together.
-				6. Clarity: Make sure the question clearly signals the shift to the new topic.
+				3. Simplicity: Use casual, simple language and short sentences.
+				4. Single ask: Keep the transition question about one idea; don't bundle multiple asks together.
+				5. Clarity: Make sure the question clearly signals the shift to the new topic.
 
 				YOUR RESPONSE: Provide only the next transition question.
 			""",
@@ -418,14 +417,14 @@ INTERVIEW_PARAMETERS = {
 				TASK: Formulate the next probing question aligned with the Current Interview Topic to deepen understanding of the interviewee's experiences and views on GenAI.
 
 				GENERAL GUIDELINES:
-    			1. One ask: You must keep each question about a single idea; do NOT do double-barreled questions that ask two things at once.
-				2. Open-endedness: Use open-ended questions ("how", "what", "why") that encourage detailed, reflective answers.
-				3. Neutrality: Avoid leading language and avoid offering advice or technical instructions.
-				4. Respect: Approach sensitive feelings or concerns with care; move on if discomfort is signaled.
-				5. Relevance: Prioritize themes central to the topic (usage patterns, ease, emotions, social effects, technical perceptions, human-likeness views, or adoption barriers/intentions) without drifting into unrelated areas.
-				6. Focus: Avoid recaps unless a brief reference is needed for clarity; keep each question focused on one aspect.
-				7. Build on answers: Anchor your question in the interviewee's own words from the whole conversation (summary and current_topic_history). Pull through specific phrases they used so it feels personal and responsive.
-				8. Simplicity: Use casual, simple language and short sentences. Avoid repetitive setups like always asking about challenges and rewards; vary how you open.
+    			1. Simplicity: Use casual, simple language and short sentences. Make it easy to comprehend the question for readers of all levels. Avoid repetitive setups like always asking about challenges and rewards; vary how you open.
+    			2. One ask: You must keep each question about a single idea; do NOT do double-barreled questions that ask two things at once.
+				3. Open-endedness: Use open-ended questions ("how", "what", "why") that encourage detailed, reflective answers.
+				4. Neutrality: Avoid leading language and avoid offering advice or technical instructions.
+				5. Respect: Approach sensitive feelings or concerns with care; move on if discomfort is signaled.
+				6. Relevance: Prioritize themes central to the topic (usage patterns, ease, emotions, social effects, technical perceptions, human-likeness views, or adoption barriers/intentions) without drifting into unrelated areas.
+				7. Focus: Avoid recaps unless a brief reference is needed for clarity; keep each question focused on one aspect.
+				8. Build on answers: Anchor your question in the interviewee's own words from the whole conversation (summary and current_topic_history). Pull through specific phrases they used so it feels personal and responsive.
 
 				PROBING GUIDELINES:
 				1. Depth: Follow up on themes that reveal motivations, perceptions, emotions, and concrete experiences with GenAI.

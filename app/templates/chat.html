@@ -160,14 +160,28 @@ appendChatbotMessage(firstQuestion, chatArea, "response");
 
 
 ////////////////////////////////////////////////////////////
-// Prevent pasting into userInput (typing-only), but allow copying text from the chat UI.
+// Clipboard behavior:
+// - Allow copy from the chat UI
+// - Allow paste into the input field (for user convenience)
 ////////////////////////////////////////////////////////////
+// NOTE: The block below used to prevent copy/cut/paste. It is intentionally disabled.
+/*
+["copy", "cut", "paste"].forEach(eventType => {
+    [chatArea, userInput].forEach(element => {
+        element.addEventListener(eventType, event => {
+            event.preventDefault();
+        });
+    });
+});
+
+// This also used to block pasting/dropping into the input field.
 userInput.addEventListener("paste", event => {
     event.preventDefault();
 });
 userInput.addEventListener("drop", event => {
     event.preventDefault();
 });
+*/
 
 
 ////////////////////////////////////////////////////////////

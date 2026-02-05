@@ -9,6 +9,7 @@ Qualtrics.SurveyEngine.addOnload(function () {
 	var userID = Qualtrics.SurveyEngine.getEmbeddedData('user_id');
 	var interviewID = Qualtrics.SurveyEngine.getEmbeddedData('interview_id');
     var endpoint = Qualtrics.SurveyEngine.getEmbeddedData('interview_endpoint');
+	console.log(endpoint, userID, interviewID);
 
 	////////////////////////////////
     // Key input and output elements
@@ -70,6 +71,7 @@ Qualtrics.SurveyEngine.addOnload(function () {
         contentType: "application/json",
         dataType: "json",
         success: function (data) {
+			console.log(data)
             question = data.message.trim()
             appendChatbotMessage(question, chatArea, "response");
             Qualtrics.SurveyEngine.setEmbeddedData('first_question', question);
@@ -82,8 +84,10 @@ Qualtrics.SurveyEngine.addOnload(function () {
 
     
 	////////////////////////////////////////////////////////////
-    // Prevent copy, cut, and paste in chatArea and inputField /
+    // Clipboard behavior: allow copy/paste
 	////////////////////////////////////////////////////////////
+    // NOTE: The block below used to prevent copy/cut/paste. It is intentionally disabled.
+    /*
     ["copy", "cut", "paste"].forEach(eventType => {
         [chatArea, inputField].forEach(element => {
             element.addEventListener(eventType, event => {
@@ -91,6 +95,7 @@ Qualtrics.SurveyEngine.addOnload(function () {
             });
         });
     });
+    */
 
 
 	////////////////////////////////////////////////////////////

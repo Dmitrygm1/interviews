@@ -169,8 +169,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
 	////////////////////////////////////////////////////////////
-    // Prevent copy, cut, and paste in chatArea and inputField /
+    // Clipboard behavior: allow copy/paste
 	////////////////////////////////////////////////////////////
+    // NOTE: The block below used to prevent copy/cut/paste. It is intentionally disabled.
+    /*
     ["copy", "cut", "paste"].forEach(eventType => {
         [chatArea, inputField].forEach(element => {
             element.addEventListener(eventType, event => {
@@ -178,6 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     });
+    */
 
 
 	////////////////////////////////////////////////////////////

@@ -1,0 +1,16 @@
+Question: What do your day-to-day work tasks usually look like?
+Answer: I am engaged in academic research, in teaching students, in writing applications for money for research or educational problems.
+
+Question: How do you incorporate generative AI into your work in academic research, teaching, or writing applications for funding, and how has it impacted those tasks?
+Answer: I do use AI in refining topics of my research and clarifying research questions. In funding applications, it helps to make text on inputs and outputs and refine goals. In teaching, I do not use it that much.
+
+Question: Can you share a specific example where using generative AI in your research or funding applications significantly enhanced your work, and perhaps another instance where it didn't meet your expectations?
+Answer: It helped me to get a better strategy for a meeting, while it failed to help me in literature review and made hallucinations.
+
+Question: How have you found the process of learning to use and integrating generative AI into your existing workflows, particularly compared to other digital tools you are familiar with, and what aspects have made this process either smooth or challenging for you?
+Answer: It is more challenging compared to Zoom or SharePoint because it changes so often.
+
+Question: How do you navigate the frequent changes in generative AI tools, and what specific challenges or adaptations have you encountered because of these updates?
+Answer: I am behind in learning how to apply the new tools and nobody at my work teaches me about that.
+
+Question: Considering your experiences with generative AI in your work, could you share how these interactions have influenced your feelings towards the technology, such as moments of pride or frustration, and how they impact your confidence and motivation in using these tools?

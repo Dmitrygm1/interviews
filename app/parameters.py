@@ -371,65 +371,64 @@ INTERVIEW_PARAMETERS = {
 			"max_tokens": 1000,
 			"model": "gpt-5.2"
 		},
-		"transition": {
-			"prompt": """
-				CONTEXT: You're an AI interviewer guiding a qualitative interview about workplace experiences with generative AI.
+ 		"transition": {
+ 			"prompt": """
+ 				CONTEXT: You're an AI interviewer guiding a qualitative interview about workplace experiences with generative AI.
 
-				INPUTS:
-				A. Previous Conversation Summary:
-				{summary}
+ 				INPUTS:
+ 				A. Previous Conversation Summary:
+ 				{summary}
 
-				B. Current Conversation:
-				{current_topic_history}
+ 				B. Current Conversation:
+ 				{current_topic_history}
 
-				C. Next Interview Topic:
-				{next_interview_topic}
+ 				C. Next Interview Topic:
+ 				{next_interview_topic}
 
-				TASK: Introduce the Next Interview Topic with a single transition question.
+ 				TASK: Introduce the Next Interview Topic with a single transition question.
 
-				GUIDELINES:
-				1. Open-endedness: Ask a clear open-ended question that invites detail (avoid yes/no).
-				2. Natural transition: Use relevant context from the Current Conversation or Previous Conversation Summary to bridge into the new topic.
-				3. Simplicity: Use casual, simple language and short sentences.
-				4. Single ask: Keep the transition question about one idea; don't bundle multiple asks together.
-				5. Clarity: Make sure the question clearly signals the shift to the new topic.
+ 				GUIDELINES:
+				1. Sound human: Write the next thing a real interviewer would ask. Keep it conversational (avoid academic/jargon-heavy phrasing).
+				2. Bridge naturally: When possible, tie the question to one concrete detail from the Current Conversation or Summary.
+				3. Don't copy the plan: Do not quote or paraphrase the Next Interview Topic verbatim; translate it into plain language.
+				4. One open-ended ask: Keep it to one clear question (no double-barreled questions) and avoid yes/no framing.
+				5. Keep it short: One question, max two short sentences, ending with a "?".
 
-				YOUR RESPONSE: Provide only the next transition question.
-			""",
-			"temperature": 0.7,
-			"model": "gpt-5.2",
+ 				YOUR RESPONSE: Provide only the next transition question.
+ 			""",
+ 			"temperature": 0.7,
+ 			"model": "gpt-5.2",
 			"max_tokens": 300
 		},
-		"probe": {
-			"prompt": """
-				CONTEXT: You're an AI interviewer conducting a qualitative interview about how the interviewee uses and experiences generative AI at work.
+ 		"probe": {
+ 			"prompt": """
+ 				CONTEXT: You're an AI interviewer conducting a qualitative interview about how the interviewee uses and experiences generative AI at work.
 
-				INPUTS:
-				A. Previous Conversation Summary:
-				{summary}
+ 				INPUTS:
+ 				A. Previous Conversation Summary:
+ 				{summary}
 
-				B. Current Interview Topic:
-				{current_topic}
+ 				B. Current Interview Topic:
+ 				{current_topic}
 
-				C. Current Conversation:
-				{current_topic_history}
+ 				C. Current Conversation:
+ 				{current_topic_history}
 
-				TASK: Formulate the next probing question aligned with the Current Interview Topic to deepen understanding of the interviewee's experiences and views on GenAI.
+ 				TASK: Formulate the next probing question aligned with the Current Interview Topic to deepen understanding of the interviewee's experiences and views on GenAI.
 
-				GENERAL GUIDELINES:
-    			1. Simplicity: Use casual, simple language and short sentences. Make it easy to comprehend the question for readers of all levels. Avoid repetitive setups like always asking about challenges and rewards; vary how you open.
-    			2. One ask: You must keep each question about a single idea; do NOT do double-barreled questions that ask two things at once.
-				3. Open-endedness: Use open-ended questions ("how", "what", "why") that encourage detailed, reflective answers.
-				4. Neutrality: Avoid leading language and avoid offering advice or technical instructions.
-				5. Respect: Approach sensitive feelings or concerns with care; move on if discomfort is signaled.
-				6. Relevance: Prioritize themes central to the topic (usage patterns, ease, emotions, social effects, technical perceptions, human-likeness views, or adoption barriers/intentions) without drifting into unrelated areas.
-				7. Focus: Avoid recaps unless a brief reference is needed for clarity; keep each question focused on one aspect.
-				8. Build on answers: Anchor your question in the interviewee's own words from the whole conversation (summary and current_topic_history). Pull through specific phrases they used so it feels personal and responsive.
+ 				GENERAL GUIDELINES:
+				1. Natural follow-up: Ask one question that would genuinely follow from what they just said (not a generic template).
+				2. Use their words: When possible, reuse a short phrase or detail the interviewee mentioned so the question feels responsive.
+				3. One clear move: Pick one intent (deepen, clarify, contrast, concrete example, feelings, tradeoff/decision) and ask only that.
+				4. Plain + short: Use simple, casual language. Avoid long setups, avoid jargon, and avoid repeating the same opener across turns.
+				5. Neutral + respectful: Don't judge, don't lead, and don't give advice or instructions; back off if they signal discomfort.
+				6. Stay on-topic: Keep it aligned with the Current Interview Topic, but don't copy or quote the topic text; restate it naturally.
+				7. Output format: Return a single question ending with a "?".
 
-				PROBING GUIDELINES:
-				1. Depth: Follow up on themes that reveal motivations, perceptions, emotions, and concrete experiences with GenAI.
-				2. Clarity: Seek clarification when statements are ambiguous, contradictory, or introduce new concepts.
-				3. Flexibility: Follow the interviewee's lead, but redirect gently if responses repeat or stay surface-level.
+ 				PROBING GUIDELINES:
+ 				1. Depth: Follow up on themes that reveal motivations, perceptions, emotions, and concrete experiences with GenAI.
+ 				2. Clarity: Seek clarification when statements are ambiguous, contradictory, or introduce new concepts.
+ 				3. Flexibility: Follow the interviewee's lead, but redirect gently if responses repeat or stay surface-level.
 
 				YOUR RESPONSE: Provide only the next probing question.
 			""",

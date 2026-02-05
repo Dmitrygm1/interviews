@@ -1,0 +1,4 @@
+Question: To start us off, how are you currently using or choosing not to use generative AI in your day-to-day work?
+Answer: I am choosing to use it carefully
+
+Question: What specific tasks or projects do you find generative AI most useful for in your work, and can you share an example of a successful experience you've had with it?
